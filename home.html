@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kala Laya Nepal — Home of Living Stage Theatre Repertory. Discover original Nepali stage drama, season productions, and black-box performances in Kathmandu.">
+  <title>Home | Kala Laya Nepal Theatre</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Inline Auth Guard: Redirect to index.html if not logged in -->
+  <script>
+    if (!localStorage.getItem("kalalaya_theatre_user")) {
+      window.location.replace("index.html");
+    }
+  </script>
+</head>
+<body id="top">
+
+  <!-- ================================================================= -->
+  <!-- Announcement Bar                                                  -->
+  <!-- ================================================================= -->
+  <aside class="announcement-bar" aria-label="Current Stage Notice">
+    <div class="announcement-content">
+      <span class="spotlight-dot" aria-hidden="true"></span>
+      <p><strong>NOW SHOWING:</strong> Original Nepali Stage Drama <em>"Kharani"</em> &amp; Satire <em>"Refund"</em> at Kalalaya Stage Hall</p>
+      <a href="#plays" class="announcement-link">View Showtimes &amp; Book Tickets &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ================================================================= -->
+  <!-- Global Header                                                     -->
+  <!-- ================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="home.html" aria-label="Kala Laya Nepal Theatre Home">
+      <img src="logo.png" alt="Kala Laya Nepal Logo" class="brand-logo-img">
+      <span class="brand-copy">
+        <strong>KALALAYA</strong>
+        <small>Theatre Repertory • नेपाल</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="nav-link active" href="home.html">Home</a>
+      <a class="nav-link" href="about.html">About Us</a>
+      <a class="nav-link" href="gallery.html">Gallery</a>
+      <a class="nav-link" href="blog.html">Theatre Blog</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Direct Instagram Link -->
+      <a class="header-instagram-btn" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" title="Follow Kalalaya on Instagram @kalalaya_">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon-svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span class="btn-text">Instagram</span>
+      </a>
+
+      <button class="header-cta-btn" id="headerTicketBtn" type="button" aria-label="Book Theatre Tickets">
+        <span>Book Tickets</span>
+      </button>
+
+      <!-- Member Badge with Logout -->
+      <div class="header-user-badge" id="headerUserBadge">
+        <div class="header-user-avatar" id="headerAvatar">KL</div>
+        <span class="header-user-info" id="headerUserName">Member</span>
+        <button class="logout-btn" id="logoutBtn" type="button" title="Sign out of Kalalaya account">Sign Out</button>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================================================================= -->
+    <!-- HERO STAGE EXPERIENCE                                             -->
+    <!-- ================================================================= -->
+    <section class="theatre-hero" id="homeHero" aria-labelledby="heroTitle">
+      <div class="stage-curtain-backdrop" aria-hidden="true"></div>
+      <div class="spotlight-beam" aria-hidden="true"></div>
+      
+      <div class="hero-container">
+        <div class="hero-text-block">
+          <div class="theatre-kicker">
+            <span class="kicker-tag">कलालय नाट्य समूह</span>
+            <span class="kicker-divider">•</span>
+            <span class="kicker-sub">LIVING STAGE REPERTORY</span>
+          </div>
+          <h1 id="heroTitle" class="hero-title">
+            Where Raw Human Drama <br>
+            <span class="highlight-text">Breathes on Stage</span>
+          </h1>
+          <p class="hero-description">
+            Kala Laya Nepal is dedicated exclusively to the craft of theatrical excellence — original Nepali dramaturgy, powerful ensemble acting, evocative stage lighting, and timeless live storytelling that resonates with the soul.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#plays" class="hero-primary-btn">
+              <span>Explore Current Plays</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+            <button type="button" class="hero-secondary-btn" id="heroBookBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6v12M2 12h20"/></svg>
+              <span>Reserve Show Tickets</span>
+            </button>
+            <a href="about.html" class="hero-ghost-btn">Our Theatre Story &rarr;</a>
+          </div>
+
+          <!-- Quick Stats Banner -->
+          <div class="hero-stats-strip">
+            <div class="stat-item">
+              <strong>18+</strong>
+              <span>Original Stage Plays</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-item">
+              <strong>280+</strong>
+              <span>Curtain Calls Given</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-item">
+              <strong>45+</strong>
+              <span>Ensemble Actors</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Live Stage Drama</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HOME HERO IMAGE SPACE (Designated Spot for Theatre Hero Image) -->
+        <div class="hero-image-showcase">
+          <div class="theatre-image-space hero-stage-slot" id="homeMainImageSlot" data-slot="home-hero">
+            <div class="image-space-indicator">
+              <span class="indicator-icon">📷</span>
+              <span class="indicator-label">HOME THEATRE IMAGE SPACE</span>
+              <span class="indicator-dim">Recommended: 1600 &times; 900 px</span>
+            </div>
+
+            <!-- Stage Image with fallback -->
+            <img src="images/hero_theatre_stage.jpg" alt="Kalalaya Theatre Live Stage Production Spotlight" class="slotted-image" id="heroSlotImg">
+            
+            <div class="image-caption-overlay">
+              <div class="caption-tag">LIVE STAGE SPOTLIGHT</div>
+              <h3 class="caption-title">Auditorium &amp; Main Stage Scenography</h3>
+              <p class="caption-text">Designed for intimate, high-impact black box and proscenium theatre plays.</p>
+            </div>
+
+            <!-- Interactive Image Swap/Test Trigger -->
+            <button type="button" class="slot-swap-btn" data-slot-id="homeMainImageSlot" title="Upload or test your own theatre photo in this space">
+              <span>Replace / Put Image</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- NOW SHOWING & REPERTORY SEASON PLAYS                              -->
+    <!-- ================================================================= -->
+    <section class="plays-section" id="plays" aria-labelledby="playsHeading">
+      <div class="section-header-centered">
+        <span class="section-eyebrow">REPERTORY SCHEDULE</span>
+        <h2 id="playsHeading" class="section-title">Current Plays &amp; Upcoming Season</h2>
+        <div class="theatre-gold-line"><span>🙣 🎭 🙡</span></div>
+        <p class="section-subtitle">Experience riveting theatrical performances staged by Kalalaya’s resident acting ensemble and visiting playwrights.</p>
+      </div>
+
+      <div class="plays-grid">
+        <!-- Play 1: Kharani -->
+        <article class="play-card">
+          <div class="play-poster-wrap">
+            <!-- Dedicated Poster Image Space -->
+            <div class="theatre-image-space play-poster-slot" id="playKharaniSlot" data-slot="play-kharani">
+              <div class="image-space-indicator">
+                <span class="indicator-icon">📷</span>
+                <span class="indicator-label">PLAY POSTER IMAGE SPACE</span>
+                <span class="indicator-dim">800 &times; 1000 px</span>
+              </div>
+              <img src="images/play_kharani.jpg" alt="Poster and stage still of theatre play Kharani" class="slotted-image">
+              <span class="play-status-pill now-showing">Now Showing</span>
+              <button type="button" class="slot-swap-btn" data-slot-id="playKharaniSlot">Put Custom Poster</button>
+            </div>
+          </div>
+          <div class="play-card-body">
+            <div class="play-meta-tags">
+              <span class="play-genre">Drama / Social Realism</span>
+              <span class="play-duration">⏱ 85 mins</span>
+            </div>
+            <h3 class="play-title">Kharani (खास कथा)</h3>
+            <p class="play-director"><strong>Directed by:</strong> Kalalaya Repertory Ensemble</p>
+            <p class="play-synopsis">
+              A deeply evocative exploration of human conscience, social friction, and redemption in rural Nepal. Written and staged with gritty physical intensity and nuanced character portrayals.
+            </p>
+            <div class="play-showtime-box">
+              <div class="show-date">
+                <span class="day">Every Fri, Sat &amp; Sun</span>
+                <span class="time">5:15 PM &amp; 7:00 PM</span>
+              </div>
+              <div class="show-hall">Stage Hall 1</div>
+            </div>
+            <button type="button" class="play-book-btn" data-play="Kharani (खास कथा)">Book Ticket &rarr;</button>
+          </div>
+        </article>
+
+        <!-- Play 2: Refund -->
+        <article class="play-card">
+          <div class="play-poster-wrap">
+            <!-- Dedicated Poster Image Space -->
+            <div class="theatre-image-space play-poster-slot" id="playRefundSlot" data-slot="play-refund">
+              <div class="image-space-indicator">
+                <span class="indicator-icon">📷</span>
+                <span class="indicator-label">PLAY POSTER IMAGE SPACE</span>
+                <span class="indicator-dim">800 &times; 1000 px</span>
+              </div>
+              <img src="images/play_refund.jpg" alt="Poster and stage still of theatre play Refund" class="slotted-image">
+              <span class="play-status-pill popular">Audience Favorite</span>
+              <button type="button" class="slot-swap-btn" data-slot-id="playRefundSlot">Put Custom Poster</button>
+            </div>
+          </div>
+          <div class="play-card-body">
+            <div class="play-meta-tags">
+              <span class="play-genre">Satire / Dark Comedy</span>
+              <span class="play-duration">⏱ 70 mins</span>
+            </div>
+            <h3 class="play-title">Refund (रिफन्ड)</h3>
+            <p class="play-director"><strong>Adapted for Stage:</strong> Kalalaya Dramaturgy Guild</p>
+            <p class="play-synopsis">
+              A sharp, riotously witty satire about an alumnus who returns to his former institution demanding a complete refund of tuition because his education proved utterly useless in the real world.
+            </p>
+            <div class="play-showtime-box">
+              <div class="show-date">
+                <span class="day">Every Tue, Wed &amp; Thu</span>
+                <span class="time">5:30 PM Regular</span>
+              </div>
+              <div class="show-hall">Black Box Studio</div>
+            </div>
+            <button type="button" class="play-book-btn" data-play="Refund (रिफन्ड)">Book Ticket &rarr;</button>
+          </div>
+        </article>
+
+        <!-- Play 3: Upcoming Premiere -->
+        <article class="play-card upcoming-card">
+          <div class="play-poster-wrap">
+            <!-- Dedicated Poster Image Space -->
+            <div class="theatre-image-space play-poster-slot blank-slot" id="playPremiereSlot" data-slot="play-premiere">
+              <div class="placeholder-graphic" aria-hidden="true">
+                <span class="stage-masks-icon">🎭</span>
+                <p><strong>Upcoming Production Poster Space</strong></p>
+                <small>Drop file or click to insert your stage poster</small>
+              </div>
+              <img src="images/theatre_monologue.jpg" alt="Upcoming premiere play preview still" class="slotted-image preview-mode">
+              <span class="play-status-pill premiering">Premiere Soon</span>
+              <button type="button" class="slot-swap-btn" data-slot-id="playPremiereSlot">Put Custom Poster</button>
+            </div>
+          </div>
+          <div class="play-card-body">
+            <div class="play-meta-tags">
+              <span class="play-genre">Psychological Mystery</span>
+              <span class="play-duration">⏱ 90 mins</span>
+            </div>
+            <h3 class="play-title">The Broken Mirror (फर्किएका छायाहरू)</h3>
+            <p class="play-director"><strong>Original Script:</strong> Kalalaya Resident Playwright</p>
+            <p class="play-synopsis">
+              An upcoming experimental play combining shadow puppets, physical movement, and solitary monologues exploring the masks we wear in public life versus the truth of our solitude.
+            </p>
+            <div class="play-showtime-box">
+              <div class="show-date">
+                <span class="day">Premiere: Coming Winter</span>
+                <span class="time">Opening Night Gala</span>
+              </div>
+              <div class="show-hall">Main Proscenium</div>
+            </div>
+            <button type="button" class="play-book-btn secondary" data-play="The Broken Mirror">Pre-Register for Passes &rarr;</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- REPERTORY EXPLORER NAVIGATION STRIP                               -->
+    <!-- ================================================================= -->
+    <section class="portal-nav-strip">
+      <div class="section-header-centered small">
+        <span class="section-eyebrow">DISCOVER KALALAYA</span>
+        <h2 class="section-title">Explore Our Theatrical World</h2>
+        <div class="theatre-gold-line"><span>🙣 🎭 🙡</span></div>
+      </div>
+
+      <div class="strip-cards-grid">
+        <a href="about.html" class="strip-card">
+          <div class="strip-card-icon">🏛️</div>
+          <h3>About Us</h3>
+          <p>Learn about our theatre heritage, rehearsal laboratory, and artistic director team.</p>
+          <span class="strip-card-link">View About Us &rarr;</span>
+        </a>
+
+        <a href="gallery.html" class="strip-card">
+          <div class="strip-card-icon">📸</div>
+          <h3>Photo Gallery</h3>
+          <p>Browse live stage photos, curtain calls, monologue series, and theatre festival moments.</p>
+          <span class="strip-card-link">View Gallery &rarr;</span>
+        </a>
+
+        <a href="blog.html" class="strip-card">
+          <div class="strip-card-icon">📜</div>
+          <h3>Theatre Blog</h3>
+          <p>Read essays on acting techniques, directorial vision, stage lighting, and rehearsal notes.</p>
+          <span class="strip-card-link">Read Essays &rarr;</span>
+        </a>
+
+        <a href="contact.html" class="strip-card">
+          <div class="strip-card-icon">🎟️</div>
+          <h3>Contact &amp; Box Office</h3>
+          <p>Check box office timing, reserve tickets, find our Kathmandu studio, or follow on Instagram.</p>
+          <span class="strip-card-link">Get in Touch &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- Global Footer                                                     -->
+  <!-- ================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-top-row">
+      <a class="footer-brand" href="home.html" aria-label="Kala Laya Nepal home">
+        <div class="footer-logo-badge">
+          <img src="logo.jpg" alt="Kala Laya Nepal Logo" class="footer-logo-img">
+        </div>
+        <span>
+          <strong>KALALAYA</strong>
+          <small>Theatre Repertory • नेपाल</small>
+        </span>
+      </a>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Theatre Blog</a>
+        <a href="contact.html">Contact &amp; Box Office</a>
+      </nav>
+
+      <div class="footer-social-wrap">
+        <span class="social-label">Follow Us on Instagram:</span>
+        <a class="footer-instagram-link" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" aria-label="Follow Kalalaya on Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@kalalaya_</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p class="copyright-text">
+        &copy; 2026 Kala Laya Nepal. Dedicated exclusively to Theatre Arts, Dramaturgy, and Living Stage Performance. All rights reserved.
+      </p>
+      <div class="footer-policy-links">
+        <a href="contact.html">Box Office Inquiries</a>
+        <span>•</span>
+        <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer">Instagram @kalalaya_</a>
+        <span>•</span>
+        <a href="#top">Back to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================= -->
+  <!-- TICKET RESERVATION MODAL                                          -->
+  <!-- ================================================================= -->
+  <div class="ticket-modal-overlay" id="ticketModal" role="dialog" aria-modal="true" aria-labelledby="ticketModalTitle">
+    <div class="ticket-modal-card">
+      <button class="modal-close-btn" id="ticketModalCloseBtn" type="button" aria-label="Close ticket booking dialog">✕</button>
+      <div class="ticket-header-strip">
+        <span class="stage-tag">🎭 KALALAYA BOX OFFICE</span>
+        <h2 id="ticketModalTitle">Book Theatre Tickets</h2>
+        <p>Reserve your seats for live stage performances at Kalalaya Stage Hall</p>
+      </div>
+
+      <form id="ticketBookingForm" novalidate>
+        <div class="field">
+          <label for="ticketPlaySelect">Select Play <span>*</span></label>
+          <div class="input-wrap select-wrap">
+            <select id="ticketPlaySelect" name="play" required>
+              <option value="Kharani (खास कथा)">Kharani (खास कथा) — Drama</option>
+              <option value="Refund (रिफन्ड)">Refund (रिफन्ड) — Satire Comedy</option>
+              <option value="The Broken Mirror">The Broken Mirror — Upcoming Premiere</option>
+            </select>
+            <span class="select-chevron" aria-hidden="true">▾</span>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label for="ticketDate">Show Date <span>*</span></label>
+            <div class="input-wrap">
+              <input type="date" id="ticketDate" name="date" required>
+            </div>
+            <small class="error-message" id="ticketDateError"></small>
+          </div>
+          <div class="field">
+            <label for="ticketTime">Showtime <span>*</span></label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketTime" name="time" required>
+                <option value="5:15 PM">Evening Show (5:15 PM)</option>
+                <option value="7:00 PM">Night Show (7:00 PM)</option>
+                <option value="1:00 PM Matinee">Saturday Matinee (1:00 PM)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label for="ticketSeats">Number of Seats <span>*</span></label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketSeats" name="seats" required>
+                <option value="1">1 Seat (Rs. 400)</option>
+                <option value="2" selected>2 Seats (Rs. 800)</option>
+                <option value="3">3 Seats (Rs. 1,200)</option>
+                <option value="4">4 Seats (Rs. 1,600)</option>
+                <option value="5">5 Seats (Rs. 2,000)</option>
+                <option value="group">Group / 6+ Seats</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ticketTier">Seating Category</label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketTier" name="tier">
+                <option value="Standard">Standard Tier (Rs. 400)</option>
+                <option value="Front Row Circle">Front Row Circle (Rs. 600)</option>
+                <option value="Student Pass">Student Concession (Rs. 250 with ID)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ticketName">Full Name <span>*</span></label>
+          <div class="input-wrap">
+            <input type="text" id="ticketName" name="name" placeholder="Your Name" required>
+          </div>
+          <small class="error-message" id="ticketNameError"></small>
+        </div>
+
+        <div class="field">
+          <label for="ticketPhone">Phone / Mobile <span>*</span></label>
+          <div class="input-wrap">
+            <input type="tel" id="ticketPhone" name="phone" placeholder="+977-98XXXXXXXX" required>
+          </div>
+          <small class="error-message" id="ticketPhoneError"></small>
+        </div>
+
+        <button type="submit" class="primary-button" id="confirmTicketBtn">Confirm Ticket Reservation &rarr;</button>
+        <div class="form-status" id="ticketStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- IMAGE SPACE TESTER & UPLOADER MODAL                               -->
+  <!-- ================================================================= -->
+  <div class="image-uploader-overlay" id="imageUploaderModal" role="dialog" aria-modal="true" aria-labelledby="uploaderModalTitle">
+    <div class="image-uploader-card">
+      <button class="modal-close-btn" id="uploaderCloseBtn" type="button" aria-label="Close Uploader">✕</button>
+      <div class="uploader-header">
+        <span class="tool-tag">📷 THEATRE IMAGE SPACE HELPER</span>
+        <h3 id="uploaderModalTitle">Put / Replace Theatre Image</h3>
+        <p>You can insert your custom theatrical production photo, play poster, or stage still into this space.</p>
+      </div>
+
+      <div class="uploader-body">
+        <div class="active-slot-badge" id="activeSlotBadge">Selected Space: Main Stage Slot</div>
+        
+        <div class="drop-zone" id="imageDropZone">
+          <div class="drop-zone-icon">🖼️</div>
+          <p><strong>Click to browse</strong> or drag &amp; drop an image here</p>
+          <small>Accepts JPG, PNG, WEBP, GIF</small>
+          <input type="file" id="localImageInput" accept="image/*" class="file-input-hidden">
+        </div>
+
+        <div class="preset-images-title">Or choose from Kalalaya Production Photos:</div>
+        <div class="preset-photos-grid">
+          <button type="button" class="preset-choice-btn" data-src="images/hero_theatre_stage.jpg">
+            <img src="images/hero_theatre_stage.jpg" alt="Hero Stage">
+            <span>Main Stage</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/play_kharani.jpg">
+            <img src="images/play_kharani.jpg" alt="Play Kharani">
+            <span>Kharani</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/play_refund.jpg">
+            <img src="images/play_refund.jpg" alt="Play Refund">
+            <span>Refund</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_monologue.jpg">
+            <img src="images/theatre_monologue.jpg" alt="Monologue">
+            <span>Monologue</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_workshop.jpg">
+            <img src="images/theatre_workshop.jpg" alt="Workshop">
+            <span>Rehearsal</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_festival.jpg">
+            <img src="images/theatre_festival.jpg" alt="Festival">
+            <span>Festival</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Kalalaya Theatre Nepal — Box office ticket reservations, studio visits in Kathmandu, audition inquiries, and official Instagram contact.">
+  <title>Contact &amp; Box Office | Kala Laya Nepal Theatre</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Inline Auth Guard: Redirect to index.html if not logged in -->
+  <script>
+    if (!localStorage.getItem("kalalaya_theatre_user")) {
+      window.location.replace("index.html");
+    }
+  </script>
+</head>
+<body id="top">
+
+  <!-- ================================================================= -->
+  <!-- Announcement Bar                                                  -->
+  <!-- ================================================================= -->
+  <aside class="announcement-bar" aria-label="Current Stage Notice">
+    <div class="announcement-content">
+      <span class="spotlight-dot" aria-hidden="true"></span>
+      <p><strong>BOX OFFICE TIMING:</strong> Counter open Tuesday – Sunday: 11:00 AM to 7:30 PM. Closed Mondays.</p>
+      <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" class="announcement-link">Direct Message on Instagram &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ================================================================= -->
+  <!-- Global Header                                                     -->
+  <!-- ================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="home.html" aria-label="Kala Laya Nepal Theatre Home">
+      <img src="logo.png" alt="Kala Laya Nepal Logo" class="brand-logo-img">
+      <span class="brand-copy">
+        <strong>KALALAYA</strong>
+        <small>Theatre Repertory • नेपाल</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="nav-link" href="home.html">Home</a>
+      <a class="nav-link" href="about.html">About Us</a>
+      <a class="nav-link" href="gallery.html">Gallery</a>
+      <a class="nav-link" href="blog.html">Theatre Blog</a>
+      <a class="nav-link active" href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Direct Instagram Link -->
+      <a class="header-instagram-btn" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" title="Follow Kalalaya on Instagram @kalalaya_">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon-svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span class="btn-text">Instagram</span>
+      </a>
+
+      <button class="header-cta-btn" id="headerTicketBtn" type="button" aria-label="Book Theatre Tickets">
+        <span>Book Tickets</span>
+      </button>
+
+      <!-- Member Badge with Logout -->
+      <div class="header-user-badge" id="headerUserBadge">
+        <div class="header-user-avatar" id="headerAvatar">KL</div>
+        <span class="header-user-info" id="headerUserName">Member</span>
+        <button class="logout-btn" id="logoutBtn" type="button" title="Sign out of Kalalaya account">Sign Out</button>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================================================================= -->
+    <!-- DEDICATED PAGE BANNER                                             -->
+    <!-- ================================================================= -->
+    <section class="page-header-banner">
+      <div class="banner-overlay-curtain"></div>
+      <div class="banner-inner">
+        <span class="section-eyebrow">BOX OFFICE &amp; REPERTORY VISITS</span>
+        <h1 class="page-banner-title">Connect with Kalalaya Theatre</h1>
+        <div class="theatre-gold-line"><span>🙣 🎭 🙡</span></div>
+        <p class="page-banner-desc">Reserve show passes, inquire about stage bookings, actor audition schedules, or reach our box office team directly.</p>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- CONTACT SECTION & AUDITORIUM IMAGE SPACE                          -->
+    <!-- ================================================================= -->
+    <section class="contact-section page-contact-section" id="contact">
+      <div class="contact-container">
+        
+        <!-- Contact Information & Highlights Column -->
+        <div class="contact-info-col">
+          
+          <!-- Dedicated Contact Image Space: Theatre Auditorium & House View -->
+          <div class="theatre-image-space contact-house-slot" id="contactHouseSlot" data-slot="contact-house">
+            <div class="image-space-indicator">
+              <span class="indicator-icon">📷</span>
+              <span class="indicator-label">CONTACT IMAGE SPACE (THEATRE HOUSE)</span>
+              <span class="indicator-dim">1000 &times; 650 px</span>
+            </div>
+            <img src="images/hero_theatre_stage.jpg" alt="Kalalaya Theatre House Entrance and Auditorium View" class="slotted-image">
+            <div class="image-caption-overlay small">
+              <div class="caption-tag">KALALAYA STAGE HALL &amp; STUDIO</div>
+              <h4 class="caption-title">The Living Black Box Space</h4>
+              <p class="caption-text">Kathmandu, Nepal • Doors open 30 mins before curtain call.</p>
+            </div>
+            <button type="button" class="slot-swap-btn" data-slot-id="contactHouseSlot">Put Theatre Hall Photo</button>
+          </div>
+
+          <!-- Highlight: Dedicated Instagram Feature Card (Strictly Required Link) -->
+          <div class="instagram-feature-card">
+            <div class="ig-card-header">
+              <div class="ig-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div class="ig-card-title">
+                <h4>Follow Our Theatrical Journey</h4>
+                <span class="ig-handle">@kalalaya_</span>
+              </div>
+            </div>
+            <p class="ig-card-text">
+              Watch real stage rehearsals, behind-the-scenes actor prep, show announcements, and curtain call clips live on our official Instagram feed!
+            </p>
+            <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" class="ig-follow-button">
+              <span>Follow @kalalaya_ on Instagram &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Contact Details Cards -->
+          <div class="contact-details-list">
+            <div class="contact-detail-item">
+              <div class="detail-icon">📍</div>
+              <div class="detail-text">
+                <strong>Theatre Studio &amp; Stage Hall:</strong>
+                <p>Kalalaya Repertory Studio, Kathmandu, Bagmati Province, Nepal</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="detail-icon">🎟</div>
+              <div class="detail-text">
+                <strong>Box Office &amp; Ticket Counter:</strong>
+                <p>Tuesday to Sunday: 11:00 AM – 7:30 PM (Mondays Closed for Theatre Dark Day)</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="detail-icon">📞</div>
+              <div class="detail-text">
+                <strong>Telephone &amp; Booking Hotline:</strong>
+                <p>+977-1-4XXXXXX / +977-98XXXXXXXX</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="detail-icon">✉️</div>
+              <div class="detail-text">
+                <strong>Theatre Inquiries &amp; Auditions:</strong>
+                <p>theatre@kalalaya.org / contact@kalalaya.org</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-col">
+          <div class="theatre-form-card">
+            <div class="card-crest">
+              <img src="logo.png" alt="Kalalaya Emblem" class="crest-img">
+            </div>
+            <h3 class="form-heading">Send a Message or Reservation Inquiry</h3>
+            <p class="form-subheading">Fill out the form below. Our box office and production management will respond promptly.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="contactName">Your Full Name <span>*</span></label>
+                <input type="text" id="contactName" name="name" placeholder="e.g. Aayush Sharma" required>
+                <small class="error-text" id="contactNameError"></small>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="contactEmail">Email Address <span>*</span></label>
+                  <input type="email" id="contactEmail" name="email" placeholder="example@domain.com" required>
+                  <small class="error-text" id="contactEmailError"></small>
+                </div>
+                <div class="form-group">
+                  <label for="contactPhone">Phone / WhatsApp</label>
+                  <input type="tel" id="contactPhone" name="phone" placeholder="+977-98XXXXXXXX">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactCategory">Inquiry Type <span>*</span></label>
+                <select id="contactCategory" name="category" required>
+                  <option value="">Select an Inquiry Type</option>
+                  <option value="ticket">Ticket Reservation &amp; Group Booking</option>
+                  <option value="audition">Audition &amp; Actor Casting Inquiries</option>
+                  <option value="workshop">Theatre Workshop Enrollment</option>
+                  <option value="stage-booking">Hall &amp; Rehearsal Space Booking</option>
+                  <option value="press">Press, Media &amp; Cultural Collaborations</option>
+                </select>
+                <small class="error-text" id="contactCategoryError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Your Message / Booking Details <span>*</span></label>
+                <textarea id="contactMessage" name="message" rows="4" placeholder="Mention preferred play, date, number of seats, or workshop inquiries..." required></textarea>
+                <small class="error-text" id="contactMessageError"></small>
+              </div>
+
+              <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">
+                <span>Submit Theatre Inquiry</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+
+              <div class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- Global Footer                                                     -->
+  <!-- ================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-top-row">
+      <a class="footer-brand" href="home.html" aria-label="Kala Laya Nepal home">
+        <div class="footer-logo-badge">
+          <img src="logo.jpg" alt="Kala Laya Nepal Logo" class="footer-logo-img">
+        </div>
+        <span>
+          <strong>KALALAYA</strong>
+          <small>Theatre Repertory • नेपाल</small>
+        </span>
+      </a>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Theatre Blog</a>
+        <a href="contact.html">Contact &amp; Box Office</a>
+      </nav>
+
+      <div class="footer-social-wrap">
+        <span class="social-label">Follow Us on Instagram:</span>
+        <a class="footer-instagram-link" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" aria-label="Follow Kalalaya on Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@kalalaya_</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p class="copyright-text">
+        &copy; 2026 Kala Laya Nepal. Dedicated exclusively to Theatre Arts, Dramaturgy, and Living Stage Performance. All rights reserved.
+      </p>
+      <div class="footer-policy-links">
+        <a href="contact.html">Box Office FAQs</a>
+        <span>•</span>
+        <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer">Instagram @kalalaya_</a>
+        <span>•</span>
+        <a href="#top">Back to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Ticket Reservation Modal -->
+  <div class="ticket-modal-overlay" id="ticketModal" role="dialog" aria-modal="true" aria-labelledby="ticketModalTitle">
+    <div class="ticket-modal-card">
+      <button class="modal-close-btn" id="ticketModalCloseBtn" type="button" aria-label="Close ticket booking dialog">✕</button>
+      <div class="ticket-header-strip">
+        <span class="stage-tag">🎭 KALALAYA BOX OFFICE</span>
+        <h2 id="ticketModalTitle">Book Theatre Tickets</h2>
+        <p>Reserve your seats for live stage performances at Kalalaya Stage Hall</p>
+      </div>
+
+      <form id="ticketBookingForm" novalidate>
+        <div class="field">
+          <label for="ticketPlaySelect">Select Play <span>*</span></label>
+          <div class="input-wrap select-wrap">
+            <select id="ticketPlaySelect" name="play" required>
+              <option value="Kharani (खास कथा)">Kharani (खास कथा) — Drama</option>
+              <option value="Refund (रिफन्ड)">Refund (रिफन्ड) — Satire Comedy</option>
+              <option value="The Broken Mirror">The Broken Mirror — Upcoming Premiere</option>
+            </select>
+            <span class="select-chevron" aria-hidden="true">▾</span>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label for="ticketDate">Show Date <span>*</span></label>
+            <div class="input-wrap">
+              <input type="date" id="ticketDate" name="date" required>
+            </div>
+            <small class="error-message" id="ticketDateError"></small>
+          </div>
+          <div class="field">
+            <label for="ticketTime">Showtime <span>*</span></label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketTime" name="time" required>
+                <option value="5:15 PM">Evening Show (5:15 PM)</option>
+                <option value="7:00 PM">Night Show (7:00 PM)</option>
+                <option value="1:00 PM Matinee">Saturday Matinee (1:00 PM)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label for="ticketSeats">Number of Seats <span>*</span></label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketSeats" name="seats" required>
+                <option value="1">1 Seat (Rs. 400)</option>
+                <option value="2" selected>2 Seats (Rs. 800)</option>
+                <option value="3">3 Seats (Rs. 1,200)</option>
+                <option value="4">4 Seats (Rs. 1,600)</option>
+                <option value="5">5 Seats (Rs. 2,000)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ticketTier">Seating Category</label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketTier" name="tier">
+                <option value="Standard">Standard Tier (Rs. 400)</option>
+                <option value="Front Row Circle">Front Row Circle (Rs. 600)</option>
+                <option value="Student Pass">Student Concession (Rs. 250 with ID)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ticketName">Full Name <span>*</span></label>
+          <div class="input-wrap">
+            <input type="text" id="ticketName" name="name" placeholder="Your Name" required>
+          </div>
+          <small class="error-message" id="ticketNameError"></small>
+        </div>
+
+        <div class="field">
+          <label for="ticketPhone">Phone / Mobile <span>*</span></label>
+          <div class="input-wrap">
+            <input type="tel" id="ticketPhone" name="phone" placeholder="+977-98XXXXXXXX" required>
+          </div>
+          <small class="error-message" id="ticketPhoneError"></small>
+        </div>
+
+        <button type="submit" class="primary-button" id="confirmTicketBtn">Confirm Ticket Reservation &rarr;</button>
+        <div class="form-status" id="ticketStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Image Space Tester & Uploader Modal -->
+  <div class="image-uploader-overlay" id="imageUploaderModal" role="dialog" aria-modal="true" aria-labelledby="uploaderModalTitle">
+    <div class="image-uploader-card">
+      <button class="modal-close-btn" id="uploaderCloseBtn" type="button" aria-label="Close Uploader">✕</button>
+      <div class="uploader-header">
+        <span class="tool-tag">📷 THEATRE IMAGE SPACE HELPER</span>
+        <h3 id="uploaderModalTitle">Put / Replace Theatre Image</h3>
+        <p>You can insert your custom theatrical production photo or box office entrance still into this space.</p>
+      </div>
+
+      <div class="uploader-body">
+        <div class="active-slot-badge" id="activeSlotBadge">Selected Space: Theatre House Slot</div>
+        
+        <div class="drop-zone" id="imageDropZone">
+          <div class="drop-zone-icon">🖼️</div>
+          <p><strong>Click to browse</strong> or drag &amp; drop an image here</p>
+          <small>Accepts JPG, PNG, WEBP, GIF</small>
+          <input type="file" id="localImageInput" accept="image/*" class="file-input-hidden">
+        </div>
+
+        <div class="preset-images-title">Or choose from Kalalaya Production Photos:</div>
+        <div class="preset-photos-grid">
+          <button type="button" class="preset-choice-btn" data-src="images/hero_theatre_stage.jpg">
+            <img src="images/hero_theatre_stage.jpg" alt="Hero Stage">
+            <span>Main Stage</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/play_kharani.jpg">
+            <img src="images/play_kharani.jpg" alt="Play Kharani">
+            <span>Kharani</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/play_refund.jpg">
+            <img src="images/play_refund.jpg" alt="Play Refund">
+            <span>Refund</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_workshop.jpg">
+            <img src="images/theatre_workshop.jpg" alt="Workshop">
+            <span>Rehearsal</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_festival.jpg">
+            <img src="images/theatre_festival.jpg" alt="Festival">
+            <span>Festival</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_monologue.jpg">
+            <img src="images/theatre_monologue.jpg" alt="Monologue">
+            <span>Monologue</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

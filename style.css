@@ -1,0 +1,3076 @@
+/* ==========================================================================
+   KALALAYA THEATRE NEPAL — OFFICIAL STYLESHEET
+   Dedicated strictly to Theatre Arts, Living Stagecraft & Dramatic Repertory
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Theatrical Velvet & Stage Palette */
+  --theatre-burgundy: #561c14;
+  --theatre-burgundy-dark: #3a100a;
+  --theatre-burgundy-deep: #250a06;
+  --theatre-rust: #8a3a1f;
+  --theatre-rust-light: #ab4b2c;
+  --theatre-charcoal: #150906;
+  --theatre-black-box: #0e0503;
+  
+  /* Stage Amber & Warm Gold Highlights */
+  --gold: #d49d42;
+  --gold-bright: #f0b95d;
+  --gold-pale: #fce7c4;
+  --gold-dark: #a17024;
+  --gold-glow: rgba(212, 157, 66, 0.35);
+
+  /* Parchment & Cream Backdrops */
+  --cream: #fbf6ee;
+  --cream-card: #fffdf9;
+  --cream-muted: #f2e6d6;
+  --cream-dark: #e8d9c5;
+  --cream-line: #d8c6b2;
+  
+  /* Typography Colors */
+  --text-main: #201714;
+  --text-muted: #675b55;
+  --text-light: #f7eee4;
+  --text-dim: #b8a698;
+  
+  /* Status Colors */
+  --color-success: #1e6b36;
+  --color-error: #b72819;
+  
+  /* Shadows & Radii */
+  --shadow-sm: 0 3px 10px rgba(35, 12, 7, 0.08);
+  --shadow-md: 0 10px 30px rgba(35, 12, 7, 0.12);
+  --shadow-lg: 0 20px 50px rgba(20, 6, 3, 0.25);
+  --shadow-glow: 0 0 30px rgba(212, 157, 66, 0.3);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  color: var(--text-main);
+  background-color: var(--cream);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   TOP ANNOUNCEMENT / STAGE SCHEDULE BAR
+   ========================================================================== */
+.announcement-bar {
+  background: linear-gradient(90deg, #250905, #44160f, #250905);
+  color: var(--gold-pale);
+  font-size: 13px;
+  padding: 8px 5%;
+  border-bottom: 1px solid rgba(212, 157, 66, 0.35);
+  position: relative;
+  z-index: 60;
+}
+
+.announcement-content {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.spotlight-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  box-shadow: 0 0 10px var(--gold-bright);
+  display: inline-block;
+  animation: pulseAmber 1.8s infinite;
+}
+
+@keyframes pulseAmber {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.6; }
+}
+
+.announcement-bar p {
+  margin: 0;
+}
+
+.announcement-bar em {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.announcement-link {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.announcement-link:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   GLOBAL HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 5%;
+  background: rgba(255, 252, 247, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(138, 58, 31, 0.12);
+  box-shadow: 0 4px 20px rgba(50, 18, 9, 0.05);
+  transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+  min-height: 76px;
+  background: rgba(255, 252, 247, 0.98);
+  box-shadow: 0 6px 25px rgba(50, 18, 9, 0.1);
+}
+
+.site-header.auth-header {
+  position: relative;
+  background: rgba(255, 252, 247, 0.98);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 3px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 4px 14px rgba(86, 28, 20, 0.15);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s;
+}
+
+.brand:hover .brand-logo-img {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 8px 20px rgba(138, 58, 31, 0.25);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-copy strong {
+  font: 700 22px/1.1 "Playfair Display", Georgia, serif;
+  letter-spacing: 0.8px;
+  color: var(--theatre-burgundy);
+}
+
+.brand-copy small {
+  font-size: 11.5px;
+  letter-spacing: 1px;
+  color: var(--theatre-rust);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.2vw, 32px);
+  margin-left: auto;
+}
+
+.nav-link {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #3f2a22;
+  padding: 8px 0;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--theatre-rust);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: var(--theatre-rust);
+  border-radius: 2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Direct Instagram Button in Header */
+.header-instagram-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  padding: 7px 15px;
+  border-radius: 24px;
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  white-space: nowrap;
+}
+
+.header-instagram-btn .social-icon-svg {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+}
+
+.header-instagram-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.4);
+}
+
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--theatre-rust), var(--theatre-burgundy));
+  color: #ffffff;
+  border: 1px solid rgba(212, 157, 66, 0.4);
+  font: 600 13.5px "DM Sans", sans-serif;
+  padding: 8px 18px;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(138, 58, 31, 0.25);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.header-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(138, 58, 31, 0.38);
+  background: var(--theatre-burgundy);
+}
+
+.header-login-btn {
+  background: transparent;
+  color: var(--theatre-burgundy);
+  border: 1.5px solid var(--theatre-burgundy);
+  font: 600 13px "DM Sans", sans-serif;
+  padding: 7px 16px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.header-login-btn:hover {
+  background: var(--theatre-burgundy);
+  color: #ffffff;
+}
+
+.header-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(138, 58, 31, 0.08);
+  border: 1px solid rgba(138, 58, 31, 0.22);
+  padding: 4px 12px 4px 5px;
+  border-radius: 24px;
+}
+
+.header-user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--theatre-rust);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.header-user-info {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--theatre-burgundy);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout-btn {
+  border: 0;
+  background: transparent;
+  color: var(--theatre-rust);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0 4px;
+}
+
+.logout-btn:hover {
+  color: var(--theatre-burgundy);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--theatre-burgundy);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   ACTIVE SESSION BANNER (PORTAL)
+   ========================================================================== */
+.active-session-banner {
+  background: #fbf5ec;
+  border-bottom: 1.5px solid var(--gold);
+  padding: 14px 5%;
+}
+
+.session-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.session-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--theatre-rust);
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+
+.session-info {
+  flex: 1;
+}
+
+.session-info strong {
+  font-size: 15px;
+  color: var(--theatre-burgundy);
+  display: block;
+}
+
+.session-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.session-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.session-enter-btn {
+  background: linear-gradient(135deg, var(--theatre-rust), var(--theatre-burgundy));
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: transform 0.2s;
+}
+
+.session-enter-btn:hover {
+  transform: translateY(-2px);
+}
+
+.session-logout-btn {
+  background: transparent;
+  border: 1px solid var(--theatre-rust);
+  color: var(--theatre-rust);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   PAGE HEADER BANNERS (Subpages)
+   ========================================================================== */
+.page-header-banner {
+  position: relative;
+  background: linear-gradient(135deg, #3a100a 0%, #200905 60%, #150603 100%);
+  color: #fff;
+  padding: clamp(50px, 7vw, 84px) 5% clamp(40px, 6vw, 68px);
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 2px solid var(--gold);
+}
+
+.page-header-banner.dark-theme {
+  background: linear-gradient(135deg, #1c0804 0%, #120402 100%);
+}
+
+.banner-overlay-curtain {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg,
+    rgba(90, 28, 18, 0.12) 0px,
+    rgba(35, 10, 6, 0.04) 40px,
+    rgba(15, 4, 2, 0.2) 80px
+  );
+  pointer-events: none;
+}
+
+.banner-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-banner-title {
+  font: 700 clamp(32px, 4vw, 48px)/1.2 "Playfair Display", Georgia, serif;
+  color: #fffaf4;
+  margin-bottom: 10px;
+}
+
+.page-banner-desc {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: #e5d4c5;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   GLOBAL THEATRE IMAGE SPACE SPECIFICATION & STYLES
+   Clearly demarcated and styled slots for every section
+   ========================================================================== */
+.theatre-image-space {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #1b0a06;
+  border: 2px solid rgba(212, 157, 66, 0.45);
+  box-shadow: 0 8px 30px rgba(25, 9, 5, 0.18);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theatre-image-space:hover {
+  border-color: var(--gold-bright);
+  box-shadow: 0 12px 35px rgba(212, 157, 66, 0.25);
+}
+
+.image-space-indicator {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 5, 3, 0.88);
+  border: 1px solid rgba(212, 157, 66, 0.65);
+  color: var(--gold-pale);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.indicator-dim {
+  color: rgba(255, 235, 205, 0.7);
+  font-weight: 500;
+  font-size: 10px;
+  border-left: 1px solid rgba(212, 157, 66, 0.4);
+  padding-left: 6px;
+  margin-left: 3px;
+}
+
+.slotted-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: block;
+}
+
+.theatre-image-space:hover .slotted-image {
+  transform: scale(1.04);
+}
+
+.image-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 24px 20px;
+  background: linear-gradient(0deg, rgba(14, 5, 3, 0.95) 0%, rgba(14, 5, 3, 0.75) 55%, transparent 100%);
+  color: #fff;
+  z-index: 3;
+}
+
+.image-caption-overlay.small {
+  padding: 18px 16px 12px;
+}
+
+.caption-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.caption-title {
+  font: 700 18px "Playfair Display", Georgia, serif;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.caption-text {
+  font-size: 12.5px;
+  color: #eeddcc;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.slot-swap-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 6;
+  background: rgba(212, 157, 66, 0.95);
+  color: #260a04;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  font: 700 11.5px "DM Sans", sans-serif;
+  padding: 5px 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+}
+
+.slot-swap-btn:hover {
+  background: #ffffff;
+  color: var(--theatre-burgundy);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.theatre-image-space.blank-slot {
+  background: radial-gradient(circle at center, #2e1109 0%, #150603 100%);
+  border: 2px dashed rgba(212, 157, 66, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+}
+
+.placeholder-graphic {
+  text-align: center;
+  color: var(--gold-pale);
+  padding: 20px;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.placeholder-graphic span {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+.placeholder-graphic p {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  margin-bottom: 4px;
+}
+
+.placeholder-graphic small {
+  font-size: 11.5px;
+  color: rgba(255, 235, 215, 0.8);
+}
+
+.slotted-image.preview-mode {
+  opacity: 0.35;
+  filter: grayscale(40%) contrast(110%);
+}
+
+/* ==========================================================================
+   SECTION COMMON HEADERS & ORNAMENTS
+   ========================================================================== */
+.section-header-centered {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 52px;
+  padding: 0 20px;
+}
+
+.section-header-centered.small {
+  margin-bottom: 34px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--theatre-rust);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font: 700 clamp(30px, 3.8vw, 44px)/1.2 "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin-bottom: 12px;
+}
+
+.theatre-gold-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 14px auto 18px;
+  color: var(--gold);
+  font-size: 15px;
+}
+
+.theatre-gold-line::before,
+.theatre-gold-line::after {
+  content: "";
+  display: block;
+  height: 1.5px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.theatre-gold-line.left {
+  justify-content: flex-start;
+  margin-inline: 0;
+}
+
+.theatre-gold-line.left::before {
+  display: none;
+}
+
+.section-subtitle {
+  font-size: 16.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   PORTAL / AUTHENTICATION (INDEX.HTML)
+   ========================================================================== */
+.portal-layout {
+  min-height: calc(100vh - 120px);
+}
+
+.auth-tabs-wrap {
+  display: flex;
+  border-bottom: 1px solid var(--cream-line);
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 12px 10px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2.5px solid transparent;
+  font: 600 14px "DM Sans", sans-serif;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.auth-tab-btn:hover {
+  color: var(--theatre-burgundy);
+}
+
+.auth-tab-btn.active {
+  color: var(--theatre-burgundy);
+  border-bottom-color: var(--theatre-rust);
+  font-weight: 700;
+}
+
+.auth-heading {
+  font: 700 28px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.culture-social-strip {
+  margin-top: 24px;
+}
+
+.culture-ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(225, 48, 108, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.culture-ig-link:hover {
+  background: rgba(225, 48, 108, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   HERO / LIVING STAGE (HOME.HTML)
+   ========================================================================== */
+.theatre-hero {
+  position: relative;
+  background-color: var(--theatre-black-box);
+  background-image:
+    radial-gradient(ellipse at 70% 30%, rgba(212, 157, 66, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 70%, rgba(138, 58, 31, 0.22) 0%, transparent 55%),
+    linear-gradient(180deg, #190905 0%, #110502 60%, #0d0402 100%);
+  color: #ffffff;
+  padding: clamp(60px, 9vw, 110px) 5% clamp(60px, 8vw, 95px);
+  overflow: hidden;
+}
+
+.stage-curtain-backdrop {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg,
+    rgba(75, 23, 14, 0.15) 0px,
+    rgba(35, 10, 6, 0.05) 40px,
+    rgba(15, 4, 2, 0.25) 80px
+  );
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight-beam {
+  position: absolute;
+  top: -100px;
+  right: 15%;
+  width: 480px;
+  height: 900px;
+  background: linear-gradient(135deg, rgba(240, 185, 93, 0.18) 0%, rgba(240, 185, 93, 0.02) 65%, transparent 100%);
+  transform: rotate(-25deg);
+  pointer-events: none;
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(35px, 5.5vw, 75px);
+}
+
+.hero-text-block {
+  max-width: 680px;
+}
+
+.theatre-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(86, 28, 20, 0.65);
+  border: 1px solid rgba(212, 157, 66, 0.45);
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 22px;
+  backdrop-filter: blur(8px);
+}
+
+.kicker-tag {
+  color: var(--gold-bright);
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.6px;
+}
+
+.kicker-divider {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.kicker-sub {
+  color: #fff;
+  font-size: 11.5px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.hero-title {
+  font: 800 clamp(38px, 5vw, 62px)/1.15 "Playfair Display", Georgia, serif;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-bottom: 22px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title .highlight-text {
+  color: var(--gold-bright);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: clamp(16px, 1.35vw, 18.5px);
+  color: #e8d7c8;
+  line-height: 1.7;
+  margin-bottom: 34px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 46px;
+}
+
+.hero-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(120deg, var(--gold-bright), var(--gold));
+  color: #240a04;
+  font-weight: 700;
+  font-size: 15.5px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(212, 157, 66, 0.38);
+  transition: all 0.28s ease;
+}
+
+.hero-primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(212, 157, 66, 0.55);
+  background: #ffffff;
+}
+
+.hero-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(138, 58, 31, 0.35);
+  color: #ffffff;
+  border: 1.5px solid rgba(212, 157, 66, 0.55);
+  font: 600 15px "DM Sans", sans-serif;
+  padding: 13px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.28s ease;
+}
+
+.hero-secondary-btn:hover {
+  background: var(--theatre-rust);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+.hero-ghost-btn {
+  color: var(--gold-pale);
+  font-weight: 500;
+  font-size: 14.5px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.hero-ghost-btn:hover {
+  color: #fff;
+}
+
+.hero-stats-strip {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(212, 157, 66, 0.22);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item strong {
+  font: 700 24px/1.1 "Playfair Display", Georgia, serif;
+  color: var(--gold-bright);
+}
+
+.stat-item span {
+  font-size: 12px;
+  color: #d1bead;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-sep {
+  width: 1px;
+  height: 32px;
+  background: rgba(212, 157, 66, 0.25);
+}
+
+.hero-image-showcase {
+  position: relative;
+}
+
+.hero-stage-slot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 420px;
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(212, 157, 66, 0.5);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(212, 157, 66, 0.15);
+}
+
+/* ==========================================================================
+   PLAYS & REPERTORY SEASON (HOME.HTML)
+   ========================================================================== */
+.plays-section {
+  padding: clamp(70px, 9vw, 110px) 5%;
+  background: linear-gradient(180deg, #f7efe4 0%, var(--cream) 100%);
+  position: relative;
+}
+
+.plays-grid {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: clamp(24px, 3.5vw, 36px);
+}
+
+.play-card {
+  background: var(--cream-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--cream-line);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s;
+}
+
+.play-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+
+.play-poster-wrap {
+  position: relative;
+  background: #1b0a06;
+}
+
+.play-poster-slot {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 2px solid rgba(212, 157, 66, 0.4);
+}
+
+.play-status-pill {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.play-status-pill.now-showing { background: #b22d1b; }
+.play-status-pill.popular { background: #a35d1e; }
+.play-status-pill.premiering { background: #463282; }
+
+.play-card-body {
+  padding: 26px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.play-meta-tags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--theatre-rust);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.play-title {
+  font: 700 24px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin-bottom: 6px;
+}
+
+.play-director {
+  font-size: 13.5px;
+  color: #635750;
+  margin-bottom: 12px;
+}
+
+.play-synopsis {
+  font-size: 14px;
+  color: #4a3e37;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.play-showtime-box {
+  background: #fbf5eb;
+  border: 1px solid #ebd9c5;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.show-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-date .day {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--theatre-burgundy);
+}
+
+.show-date .time {
+  font-size: 12px;
+  color: var(--theatre-rust);
+  font-weight: 500;
+}
+
+.show-hall {
+  font-size: 11.5px;
+  font-weight: 600;
+  background: rgba(138, 58, 31, 0.12);
+  color: var(--theatre-rust);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.play-book-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--theatre-burgundy);
+  color: #ffffff;
+  border: 1px solid var(--theatre-burgundy);
+  font: 600 14.5px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.play-book-btn:hover {
+  background: var(--theatre-rust);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(138, 58, 31, 0.3);
+}
+
+.play-book-btn.secondary {
+  background: transparent;
+  color: var(--theatre-burgundy);
+  border: 1.5px solid var(--theatre-burgundy);
+}
+
+.play-book-btn.secondary:hover {
+  background: var(--theatre-burgundy);
+  color: #fff;
+}
+
+/* Discovery Navigation Strip (Home Page) */
+.portal-nav-strip {
+  padding: 70px 5%;
+  background: #ffffff;
+  border-top: 1px solid var(--cream-line);
+}
+
+.strip-cards-grid {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.strip-card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-line);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.strip-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
+}
+
+.strip-card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.strip-card h3 {
+  font: 700 20px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin-bottom: 8px;
+}
+
+.strip-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.strip-card-link {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--theatre-rust);
+}
+
+/* ==========================================================================
+   ABOUT US SECTION (ABOUT.HTML)
+   ========================================================================== */
+.about-section {
+  padding: clamp(60px, 8vw, 90px) 5%;
+  background: #ffffff;
+}
+
+.about-container {
+  max-width: 1350px;
+  margin: 0 auto 70px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 80px);
+}
+
+.about-content-col {
+  max-width: 650px;
+}
+
+.lead-paragraph {
+  font: 500 18.5px/1.65 "DM Sans", sans-serif;
+  color: #3b2820;
+  margin-bottom: 18px;
+}
+
+.body-paragraph {
+  font-size: 15.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.theatre-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.pillar-card {
+  background: #fbf6ee;
+  border: 1px solid #ebd9c5;
+  border-radius: var(--radius-sm);
+  padding: 20px 18px;
+  transition: transform 0.25s ease, border-color 0.25s;
+}
+
+.pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+}
+
+.pillar-icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.pillar-card h4 {
+  font: 700 16px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin-bottom: 6px;
+}
+
+.pillar-card p {
+  font-size: 13px;
+  color: #5d534d;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about-visuals-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-primary-slot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 320px;
+}
+
+.about-secondary-slot {
+  width: 88%;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+  margin-left: auto;
+  transform: translateY(-20px);
+  border-color: var(--theatre-rust);
+}
+
+.team-showcase-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding-top: 40px;
+  border-top: 1px solid var(--cream-line);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+.team-card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.team-portrait-slot {
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 2px solid rgba(212, 157, 66, 0.4);
+}
+
+.team-info {
+  padding: 20px;
+}
+
+.team-info h4 {
+  font: 700 18px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin-bottom: 3px;
+}
+
+.team-role {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--theatre-rust);
+  margin-bottom: 8px;
+}
+
+.team-info p {
+  font-size: 13px;
+  color: #635750;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   GALLERY SECTION (GALLERY.HTML)
+   ========================================================================== */
+.gallery-section {
+  padding: clamp(60px, 8vw, 90px) 5%;
+  background: #140704;
+  color: #ffffff;
+}
+
+.gallery-section .section-title {
+  color: #fffaf4;
+}
+
+.gallery-section .section-subtitle {
+  color: #d8c7b8;
+}
+
+.gallery-filter-bar {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gallery-filter-btn {
+  background: rgba(50, 18, 10, 0.6);
+  border: 1px solid rgba(212, 157, 66, 0.4);
+  color: var(--gold-pale);
+  font: 600 13.5px "DM Sans", sans-serif;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gallery-filter-btn:hover {
+  background: var(--theatre-rust);
+  color: #ffffff;
+  border-color: var(--gold-bright);
+}
+
+.gallery-filter-btn.active {
+  background: var(--gold);
+  color: #1c0a05;
+  border-color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(212, 157, 66, 0.45);
+}
+
+.gallery-grid {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 24px;
+}
+
+.gallery-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-slot {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(14, 5, 3, 0.95) 0%, rgba(20, 7, 4, 0.6) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 4;
+}
+
+.gallery-item:hover .gallery-hover-overlay {
+  opacity: 1;
+}
+
+.gallery-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold-bright);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.gallery-item-title {
+  font: 700 18px "Playfair Display", Georgia, serif;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.gallery-item-meta {
+  font-size: 12px;
+  color: #edd9c8;
+  margin-bottom: 14px;
+}
+
+.gallery-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery-zoom-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.gallery-zoom-btn:hover {
+  background: #ffffff;
+  color: var(--theatre-burgundy);
+}
+
+/* ==========================================================================
+   BLOG SECTION (BLOG.HTML)
+   ========================================================================== */
+.blog-section {
+  padding: clamp(60px, 8vw, 90px) 5%;
+  background: var(--cream);
+}
+
+.blog-grid {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(24px, 3.5vw, 36px);
+}
+
+.blog-card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s ease, box-shadow 0.28s;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+
+.blog-thumb-slot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 2px solid rgba(212, 157, 66, 0.4);
+}
+
+.blog-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--theatre-rust);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.blog-category {
+  color: var(--theatre-burgundy);
+  background: rgba(138, 58, 31, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.blog-dot {
+  color: rgba(138, 58, 31, 0.4);
+}
+
+.blog-title {
+  font: 700 20px/1.3 "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin-bottom: 10px;
+}
+
+.blog-excerpt {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.blog-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ebd9c5;
+  padding-top: 14px;
+}
+
+.author-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #554841;
+}
+
+.read-article-btn {
+  background: transparent;
+  border: 0;
+  color: var(--theatre-rust);
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.read-article-btn:hover {
+  color: var(--theatre-burgundy);
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   CONTACT SECTION (CONTACT.HTML)
+   ========================================================================== */
+.contact-section {
+  padding: clamp(60px, 8vw, 90px) 5%;
+  background: linear-gradient(180deg, #f5ebe0 0%, #ecdcc8 100%);
+}
+
+.contact-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 5.5vw, 75px);
+  align-items: flex-start;
+}
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-house-slot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 280px;
+}
+
+.instagram-feature-card {
+  background: linear-gradient(135deg, #3d140e 0%, #200804 100%);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(35, 12, 7, 0.25);
+}
+
+.ig-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.ig-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.35);
+  flex-shrink: 0;
+}
+
+.ig-card-title h4 {
+  font: 700 18px "Playfair Display", Georgia, serif;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.ig-handle {
+  font-size: 13.5px;
+  color: var(--gold-bright);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.ig-card-text {
+  font-size: 14px;
+  color: #eddcd0;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.ig-follow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #ffffff;
+  font: 700 14.5px "DM Sans", sans-serif;
+  padding: 12px 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 16px rgba(225, 48, 108, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s;
+}
+
+.ig-follow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.45);
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #dfcfbc;
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+}
+
+.detail-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.detail-text strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--theatre-burgundy);
+  margin-bottom: 2px;
+}
+
+.detail-text p {
+  font-size: 13px;
+  color: #5d534d;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.theatre-form-card {
+  background: rgba(255, 252, 247, 0.95);
+  border: 1px solid rgba(138, 58, 31, 0.25);
+  border-radius: var(--radius-md);
+  padding: clamp(28px, 4vw, 44px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-crest {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  border: 1px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(86, 28, 20, 0.12);
+}
+
+.crest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.form-heading {
+  font: 700 24px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.form-subheading {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #3b281f;
+  margin-bottom: 6px;
+}
+
+.form-group label span {
+  color: var(--theatre-rust);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #cdbfaf;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 14.5px;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--theatre-rust);
+  box-shadow: 0 0 0 3px rgba(138, 58, 31, 0.12);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.error-text {
+  display: block;
+  font-size: 12px;
+  color: var(--color-error);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.error-text:empty {
+  display: none;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  min-height: 50px;
+  background: linear-gradient(120deg, var(--theatre-rust), var(--theatre-burgundy));
+  color: #ffffff;
+  border: 1px solid var(--theatre-rust);
+  border-radius: 8px;
+  font: 600 15.5px "DM Sans", sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(138, 58, 31, 0.25);
+  transition: all 0.25s ease;
+  margin-top: 10px;
+}
+
+.contact-submit-btn:hover {
+  background: var(--theatre-burgundy-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(138, 58, 31, 0.35);
+}
+
+.form-feedback {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: none;
+}
+
+.form-feedback:not(:empty) {
+  display: block;
+}
+
+.form-feedback.success {
+  background: #eaf6ed;
+  border: 1px solid #7dc792;
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.form-feedback.error {
+  background: #fdf0ee;
+  border: 1px solid #e28a7e;
+  color: var(--color-error);
+}
+
+/* ==========================================================================
+   REGISTRATION & CULTURE BACKDROP PANEL (INDEX.HTML)
+   ========================================================================== */
+.registration-layout {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  align-items: stretch;
+  min-height: 880px;
+  background: #f4e9d9;
+}
+
+.culture-panel {
+  position: relative;
+  overflow: hidden;
+  color: #fff7ec;
+  background-color: #240d06;
+  background-image:
+    radial-gradient(circle at 50% 36%, rgba(220,150,75,0.22) 0%, rgba(36,13,6,0.72) 55%, #180703 100%),
+    url("logo.png");
+  background-position: center 32%;
+  background-size: cover, 400px auto;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.culture-bg-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.culture-bg-art.mode-logo {
+  background-color: #230d06;
+  background-image:
+    radial-gradient(circle at 50% 36%, rgba(220,150,75,0.25) 0%, rgba(36,13,6,0.7) 55%, #160602 100%),
+    url("logo.png");
+  background-position: center 32%;
+  background-size: cover, 400px auto;
+  background-repeat: no-repeat;
+}
+
+.culture-bg-art.mode-cultural {
+  background-image: url("cover-bg.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.culture-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,8,4,0.3) 0%, rgba(26,10,5,0.45) 35%, rgba(32,12,6,0.85) 68%, #140502 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.culture-top-controls {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 30px 32px 0;
+}
+
+.culture-badge-tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffd8ae;
+  background: rgba(30,12,6,0.65);
+  border: 1px solid rgba(220,175,128,0.4);
+  padding: 5px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.bg-mode-switcher {
+  display: inline-flex;
+  background: rgba(20,8,4,0.7);
+  border: 1px solid rgba(220,175,128,0.35);
+  border-radius: 24px;
+  padding: 3px;
+  backdrop-filter: blur(8px);
+}
+
+.bg-switch-btn {
+  border: 0;
+  background: transparent;
+  color: rgba(255,240,225,0.78);
+  font: 600 11.5px "DM Sans", sans-serif;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.bg-switch-btn.active {
+  background: var(--theatre-rust);
+  color: #ffffff;
+}
+
+.culture-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 10% 50px;
+  margin-top: auto;
+  text-align: center;
+}
+
+.culture-logo-badge {
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 8px;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.55), 0 0 0 3px rgba(224,180,128,0.85);
+}
+
+.culture-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.culture-content h2 {
+  font: 700 32px "Playfair Display", Georgia, serif;
+  color: #fffaf2;
+  margin-bottom: 4px;
+}
+
+.culture-tagline {
+  font-size: 15px;
+  color: #f7dfc5;
+  margin-bottom: 14px;
+}
+
+.short-rule {
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: rgba(255,240,220,0.7);
+  margin: 16px auto;
+}
+
+.culture-description {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #f8eee2;
+}
+
+.lotus-decoration {
+  position: absolute;
+  left: -30px;
+  bottom: -150px;
+  font-size: 180px;
+  color: rgba(204,151,106,0.2);
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+/* Form Side */
+.form-side {
+  padding: 48px clamp(24px, 4.5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 35%, #fffaf2 0%, #f7eee2 68%, #f1e4d3 100%);
+}
+
+.form-card {
+  width: 100%;
+  max-width: 580px;
+  padding: 36px clamp(20px, 3.5vw, 48px);
+  background: rgba(255,251,244,0.88);
+  border: 1px solid rgba(131,93,66,0.25);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.form-card-badge {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid var(--gold);
+}
+
+.form-badge-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.form-intro {
+  font-size: 15px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field > label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #3b281f;
+  margin-bottom: 6px;
+}
+
+.field > label span {
+  color: var(--theatre-rust);
+}
+
+.input-wrap {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1.5px solid #cdbfaf;
+  border-radius: 8px;
+  padding: 0 14px;
+  background: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+}
+
+.input-wrap:focus-within {
+  background: #ffffff;
+  border-color: var(--theatre-rust);
+  box-shadow: 0 0 0 3px rgba(138, 58, 31, 0.12);
+}
+
+.input-wrap > svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #482d21;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.input-wrap input,
+.input-wrap select {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-chevron {
+  font-size: 18px;
+  color: #482d21;
+  pointer-events: none;
+}
+
+.visibility-toggle {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #81766e;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.hint {
+  display: block;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.error-message {
+  display: block;
+  font-size: 12px;
+  color: var(--color-error);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.terms-row input {
+  margin-top: 3px;
+}
+
+.terms-row label {
+  font-size: 12.5px;
+  color: #4a3c33;
+}
+
+.terms-row a {
+  color: var(--theatre-rust);
+  font-weight: 600;
+}
+
+.primary-button {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(100deg, var(--theatre-rust), var(--theatre-burgundy));
+  color: #fff;
+  border: 1px solid var(--theatre-rust);
+  font: 600 15px "DM Sans", sans-serif;
+  cursor: pointer;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(138, 58, 31, 0.25);
+  transition: all 0.25s ease;
+}
+
+.primary-button:hover {
+  background: var(--theatre-burgundy-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(138, 58, 31, 0.35);
+}
+
+.secondary-button {
+  width: 100%;
+  min-height: 46px;
+  border-radius: 8px;
+  border: 1.5px solid var(--theatre-rust);
+  background: transparent;
+  color: var(--theatre-rust);
+  font: 600 14px "DM Sans", sans-serif;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.25s ease;
+}
+
+.secondary-button:hover {
+  background: var(--theatre-rust);
+  color: #ffffff;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  color: #817770;
+}
+
+.login-divider span {
+  height: 1px;
+  background: #e1d6ca;
+  flex: 1;
+}
+
+.login-divider p {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.form-status {
+  font-size: 13.5px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-top: 14px;
+  display: none;
+}
+
+.form-status:not(:empty) {
+  display: block;
+}
+
+.form-status.success {
+  background: #eaf6ed;
+  border: 1px solid #7dc792;
+  color: var(--color-success);
+}
+
+.form-status.error {
+  background: #fdf0ee;
+  border: 1px solid #e28a7e;
+  color: var(--color-error);
+}
+
+/* Mountain Footer Art Section */
+.mountain-footer-art {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#f4e9d9, #f8efe2);
+}
+
+.mountain-ranges {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background:
+    linear-gradient(145deg, transparent 48%, #ddc3a3 48.3% 51%, transparent 51.3%) 0 100%/30% 85% no-repeat,
+    linear-gradient(35deg, transparent 47%, #e2c9aa 47.3% 52%, transparent 52.3%) 0 100%/38% 95% no-repeat,
+    linear-gradient(145deg, transparent 48%, #ead6bc 48.3% 52%, transparent 52.3%) 28% 100%/38% 78% no-repeat,
+    linear-gradient(35deg, transparent 48%, #e6cfb1 48.3% 52%, transparent 52.3%) 52% 100%/38% 82% no-repeat,
+    linear-gradient(145deg, transparent 48%, #d9bb98 48.3% 52%, transparent 52.3%) 70% 100%/38% 95% no-repeat;
+}
+
+.temple-art {
+  position: absolute;
+  right: 5%;
+  bottom: -20px;
+  font-family: Georgia, serif;
+  font-size: 140px;
+  color: rgba(183,133,85,0.45);
+}
+
+/* ==========================================================================
+   GLOBAL FOOTER
+   ========================================================================== */
+.site-footer {
+  background: linear-gradient(110deg, #38160c, #1f0b05);
+  color: #fff4e7;
+  padding: 50px 5% 30px;
+  border-top: 1px solid rgba(212, 157, 66, 0.3);
+}
+
+.footer-top-row {
+  max-width: 1350px;
+  margin: 0 auto 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 3px;
+  border: 1px solid var(--gold);
+}
+
+.footer-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.footer-brand strong {
+  font: 700 20px "Playfair Display", Georgia, serif;
+  color: #fff;
+  display: block;
+}
+
+.footer-brand small {
+  font-size: 11.5px;
+  color: var(--gold-pale);
+  letter-spacing: 0.8px;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-size: 13.5px;
+  color: #edd9c8;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--gold-bright);
+}
+
+.footer-social-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-label {
+  font-size: 13px;
+  color: var(--gold-pale);
+  font-weight: 500;
+}
+
+.footer-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.footer-instagram-link:hover {
+  transform: translateY(-2px);
+}
+
+.footer-bottom-row {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: #baa495;
+}
+
+.copyright-text {
+  margin: 0;
+}
+
+.footer-policy-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-policy-links a {
+  color: #d1beb1;
+}
+
+.footer-policy-links a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   MODALS: TICKET, LIGHTBOX, ARTICLE & IMAGE UPLOADER
+   ========================================================================== */
+.ticket-modal-overlay,
+.lightbox-overlay,
+.article-modal-overlay,
+.image-uploader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(18, 6, 3, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ticket-modal-overlay.active,
+.lightbox-overlay.active,
+.article-modal-overlay.active,
+.image-uploader-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #d2c0b0;
+  color: var(--theatre-burgundy);
+  font-size: 16px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: var(--theatre-rust);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.ticket-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  background: #fffbf6;
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 34px 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.ticket-header-strip {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stage-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--theatre-rust);
+}
+
+.ticket-header-strip h2 {
+  font: 700 26px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin: 4px 0;
+}
+
+.ticket-header-strip p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Lightbox Modal */
+.lightbox-container {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-media-wrap {
+  max-height: 75vh;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--gold);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+.lightbox-image {
+  max-height: 75vh;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(20, 6, 3, 0.85);
+  border: 1px solid var(--gold);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.lightbox-nav-btn.prev { left: -60px; }
+.lightbox-nav-btn.next { right: -60px; }
+
+.lightbox-nav-btn:hover {
+  background: var(--gold);
+  color: #1a0804;
+}
+
+.lightbox-caption-bar {
+  margin-top: 16px;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+}
+
+.lightbox-caption-bar h3 {
+  font: 700 20px "Playfair Display", Georgia, serif;
+  color: var(--gold-bright);
+  margin-bottom: 4px;
+}
+
+.lightbox-caption-bar p {
+  font-size: 13.5px;
+  color: #eddcd0;
+  margin-bottom: 6px;
+}
+
+.lightbox-counter {
+  font-size: 12px;
+  color: var(--gold-pale);
+  font-weight: 600;
+}
+
+/* Article Modal */
+.article-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  background: #fffcf8;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.article-modal-hero {
+  width: 100%;
+  height: 280px;
+  background: #1b0a06;
+}
+
+.article-modal-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-modal-body {
+  padding: 32px 34px;
+}
+
+.article-meta-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.category-pill {
+  background: rgba(138, 58, 31, 0.12);
+  color: var(--theatre-rust);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.read-time-pill {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.article-modal-body h2 {
+  font: 700 28px/1.25 "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin-bottom: 10px;
+}
+
+.article-author-byline {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--theatre-rust);
+  margin-bottom: 22px;
+  border-bottom: 1px solid #ebd9c5;
+  padding-bottom: 12px;
+}
+
+.article-full-text {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #3b281f;
+}
+
+.article-full-text p {
+  margin-bottom: 16px;
+}
+
+.article-full-text blockquote {
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+  font-style: italic;
+  color: var(--theatre-burgundy);
+  margin: 20px 0;
+  font-size: 17px;
+}
+
+.article-modal-actions {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ebd9c5;
+  text-align: center;
+}
+
+.article-ig-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 24px;
+}
+
+/* Image Slot Uploader / Replacer Modal */
+.image-uploader-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: #fffcf8;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+
+.uploader-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tool-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--theatre-rust);
+}
+
+.uploader-header h3 {
+  font: 700 24px "Playfair Display", Georgia, serif;
+  color: var(--theatre-burgundy);
+  margin: 4px 0;
+}
+
+.uploader-header p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.active-slot-badge {
+  background: #fbf5eb;
+  border: 1px solid var(--gold);
+  color: var(--theatre-burgundy);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.drop-zone {
+  border: 2px dashed rgba(138, 58, 31, 0.45);
+  border-radius: var(--radius-sm);
+  background: rgba(248, 242, 232, 0.5);
+  padding: 28px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 20px;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+  border-color: var(--theatre-rust);
+  background: rgba(248, 242, 232, 0.95);
+}
+
+.drop-zone-icon {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.drop-zone p {
+  font-size: 14.5px;
+  color: var(--theatre-burgundy);
+  margin-bottom: 4px;
+}
+
+.drop-zone small {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.preset-images-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--theatre-burgundy);
+  margin-bottom: 10px;
+}
+
+.preset-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.preset-choice-btn {
+  background: transparent;
+  border: 1px solid #d2c0b0;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preset-choice-btn img {
+  width: 100%;
+  height: 52px;
+  object-fit: cover;
+}
+
+.preset-choice-btn span {
+  font-size: 10px;
+  font-weight: 600;
+  color: #3b281f;
+  padding: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.preset-choice-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
+/* Toast Container */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast-msg {
+  pointer-events: auto;
+  background: #1f0b05;
+  color: #fffaf2;
+  border: 1.5px solid var(--gold);
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toast-msg.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-msg.success {
+  border-color: #62b578;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-image-showcase {
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .about-visuals-col {
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .registration-layout {
+    grid-template-columns: 1fr;
+  }
+  .culture-panel {
+    min-height: 480px;
+  }
+  .lightbox-nav-btn.prev { left: 10px; }
+  .lightbox-nav-btn.next { right: 10px; }
+}
+
+@media (max-width: 880px) {
+  .site-header {
+    padding: 10px 4%;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 18px 5%;
+    background: #fffcf8;
+    box-shadow: 0 12px 24px rgba(35, 12, 7, 0.12);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-top: 1px solid var(--cream-line);
+  }
+  .main-nav.open {
+    display: flex;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 8px 0;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .header-cta-btn {
+    display: none;
+  }
+  .theatre-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+  .preset-photos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .announcement-bar {
+    font-size: 11.5px;
+    padding: 6px 3%;
+  }
+  .brand-logo-img {
+    width: 42px;
+    height: 42px;
+  }
+  .brand-copy strong {
+    font-size: 17px;
+  }
+  .brand-copy small {
+    font-size: 10px;
+  }
+  .header-instagram-btn .btn-text {
+    display: none;
+  }
+  .header-instagram-btn {
+    padding: 6px 10px;
+  }
+  .hero-stats-strip {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .hero-primary-btn, .hero-secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer-top-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-nav {
+    justify-content: center;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

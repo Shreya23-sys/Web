@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kala Laya Nepal Theatre Blog — Essays on dramaturgy, actor breath and movement, stage lighting design, and directorial reflections.">
+  <title>Theatre Blog | Kala Laya Nepal Theatre</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Inline Auth Guard: Redirect to index.html if not logged in -->
+  <script>
+    if (!localStorage.getItem("kalalaya_theatre_user")) {
+      window.location.replace("index.html");
+    }
+  </script>
+</head>
+<body id="top">
+
+  <!-- ================================================================= -->
+  <!-- Announcement Bar                                                  -->
+  <!-- ================================================================= -->
+  <aside class="announcement-bar" aria-label="Current Stage Notice">
+    <div class="announcement-content">
+      <span class="spotlight-dot" aria-hidden="true"></span>
+      <p><strong>NEW ESSAY:</strong> <em>"The Sacred Silence: Mastering Pauses &amp; Subtext in Nepali Theatre"</em> is now published.</p>
+      <a href="#blogGrid" class="announcement-link">Read New Articles Below &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ================================================================= -->
+  <!-- Global Header                                                     -->
+  <!-- ================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="home.html" aria-label="Kala Laya Nepal Theatre Home">
+      <img src="logo.png" alt="Kala Laya Nepal Logo" class="brand-logo-img">
+      <span class="brand-copy">
+        <strong>KALALAYA</strong>
+        <small>Theatre Repertory • नेपाल</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="nav-link" href="home.html">Home</a>
+      <a class="nav-link" href="about.html">About Us</a>
+      <a class="nav-link" href="gallery.html">Gallery</a>
+      <a class="nav-link active" href="blog.html">Theatre Blog</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Direct Instagram Link -->
+      <a class="header-instagram-btn" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" title="Follow Kalalaya on Instagram @kalalaya_">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon-svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span class="btn-text">Instagram</span>
+      </a>
+
+      <button class="header-cta-btn" id="headerTicketBtn" type="button" aria-label="Book Theatre Tickets">
+        <span>Book Tickets</span>
+      </button>
+
+      <!-- Member Badge with Logout -->
+      <div class="header-user-badge" id="headerUserBadge">
+        <div class="header-user-avatar" id="headerAvatar">KL</div>
+        <span class="header-user-info" id="headerUserName">Member</span>
+        <button class="logout-btn" id="logoutBtn" type="button" title="Sign out of Kalalaya account">Sign Out</button>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================================================================= -->
+    <!-- DEDICATED PAGE BANNER                                             -->
+    <!-- ================================================================= -->
+    <section class="page-header-banner">
+      <div class="banner-overlay-curtain"></div>
+      <div class="banner-inner">
+        <span class="section-eyebrow">THEATRE CRITIQUES &amp; ESSAYS</span>
+        <h1 class="page-banner-title">The Theatre Chronicle</h1>
+        <div class="theatre-gold-line"><span>🙣 🎭 🙡</span></div>
+        <p class="page-banner-desc">Critical reflections on dramaturgy, acting methodologies, scenography, and the evolving spirit of Nepali theatre.</p>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- THEATRE BLOG GRID & ARTICLE IMAGE SPACES                          -->
+    <!-- ================================================================= -->
+    <section class="blog-section page-blog-section" id="blogGrid">
+      <div class="blog-grid">
+        
+        <!-- Blog Post 1 -->
+        <article class="blog-card" data-post-id="post-1">
+          <div class="theatre-image-space blog-thumb-slot" id="blogSlot1" data-slot="blog-1">
+            <div class="image-space-indicator">
+              <span class="indicator-icon">📷</span>
+              <span class="indicator-label">BLOG IMAGE SPACE 1</span>
+              <span class="indicator-dim">700 &times; 450 px</span>
+            </div>
+            <img src="images/theatre_monologue.jpg" alt="Actor in monologue performance on theatre stage" class="slotted-image">
+            <button type="button" class="slot-swap-btn" data-slot-id="blogSlot1">Put Article Photo</button>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span class="blog-category">Acting Technique</span>
+              <span class="blog-dot">•</span>
+              <span class="blog-read-time">5 min read</span>
+              <span class="blog-dot">•</span>
+              <time datetime="2026-09-18" class="blog-date">Oct 2026</time>
+            </div>
+            <h3 class="blog-title">The Sacred Silence: Mastering Pauses &amp; Subtext in Nepali Theatre</h3>
+            <p class="blog-excerpt">
+              In dramatic dialogue, what remains unspoken often carries far more weight than words. Here is how our actors train to inhabit stillness and make pregnant pauses resonate across the auditorium.
+            </p>
+            <div class="blog-card-footer">
+              <div class="blog-author">
+                <span class="author-name">By Kalalaya Acting Master</span>
+              </div>
+              <button type="button" class="read-article-btn" data-post-id="post-1">Read Article &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-card" data-post-id="post-2">
+          <div class="theatre-image-space blog-thumb-slot" id="blogSlot2" data-slot="blog-2">
+            <div class="image-space-indicator">
+              <span class="indicator-icon">📷</span>
+              <span class="indicator-label">BLOG IMAGE SPACE 2</span>
+              <span class="indicator-dim">700 &times; 450 px</span>
+            </div>
+            <img src="images/play_kharani.jpg" alt="Stage still from Kharani theatre production" class="slotted-image">
+            <button type="button" class="slot-swap-btn" data-slot-id="blogSlot2">Put Article Photo</button>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span class="blog-category">Directing &amp; Dramaturgy</span>
+              <span class="blog-dot">•</span>
+              <span class="blog-read-time">7 min read</span>
+              <span class="blog-dot">•</span>
+              <time datetime="2026-09-04" class="blog-date">Sep 2026</time>
+            </div>
+            <h3 class="blog-title">From Script to Spotlight: The Directorial Vision Behind "Kharani"</h3>
+            <p class="blog-excerpt">
+              A deep dive into how our creative team deconstructed the text of Kharani to create an intimate, visceral staging that draws the spectator into moral dilemmas of the characters.
+            </p>
+            <div class="blog-card-footer">
+              <div class="blog-author">
+                <span class="author-name">By Resident Stage Director</span>
+              </div>
+              <button type="button" class="read-article-btn" data-post-id="post-2">Read Article &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-card" data-post-id="post-3">
+          <div class="theatre-image-space blog-thumb-slot" id="blogSlot3" data-slot="blog-3">
+            <div class="image-space-indicator">
+              <span class="indicator-icon">📷</span>
+              <span class="indicator-label">BLOG IMAGE SPACE 3</span>
+              <span class="indicator-dim">700 &times; 450 px</span>
+            </div>
+            <img src="images/hero_theatre_stage.jpg" alt="Stage lighting and amber spotlights" class="slotted-image">
+            <button type="button" class="slot-swap-btn" data-slot-id="blogSlot3">Put Article Photo</button>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span class="blog-category">Scenography &amp; Lights</span>
+              <span class="blog-dot">•</span>
+              <span class="blog-read-time">4 min read</span>
+              <span class="blog-dot">•</span>
+              <time datetime="2026-08-20" class="blog-date">Aug 2026</time>
+            </div>
+            <h3 class="blog-title">Sculpting with Shadows: How Amber and Cold Blue Tell Stories on Stage</h3>
+            <p class="blog-excerpt">
+              Stage lighting isn't merely illumination; it is emotional architecture. Discover how our lighting designer creates psychological depth without expensive visual gimmicks.
+            </p>
+            <div class="blog-card-footer">
+              <div class="blog-author">
+                <span class="author-name">By Lighting Scenographer</span>
+              </div>
+              <button type="button" class="read-article-btn" data-post-id="post-3">Read Article &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 4: User Reserved Image Slot -->
+        <article class="blog-card" data-post-id="post-4">
+          <div class="theatre-image-space blog-thumb-slot blank-slot" id="blogSlot4" data-slot="blog-4">
+            <div class="placeholder-graphic">
+              <span>✍️</span>
+              <small>Article Photo Space (Click to insert)</small>
+            </div>
+            <img src="images/theatre_workshop.jpg" alt="Acting workshop laboratory" class="slotted-image preview-mode">
+            <button type="button" class="slot-swap-btn" data-slot-id="blogSlot4">Put Article Photo</button>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-meta">
+              <span class="blog-category">Ensemble Life</span>
+              <span class="blog-dot">•</span>
+              <span class="blog-read-time">6 min read</span>
+              <span class="blog-dot">•</span>
+              <time datetime="2026-08-05" class="blog-date">Aug 2026</time>
+            </div>
+            <h3 class="blog-title">The Crucible of the Rehearsal Room: 6 Weeks of Voice &amp; Movement</h3>
+            <p class="blog-excerpt">
+              What does an ensemble go through before the curtain lifts? A candid behind-the-scenes account of the sweat, self-doubt, breakthroughs, and brotherhood that form our theatre family.
+            </p>
+            <div class="blog-card-footer">
+              <div class="blog-author">
+                <span class="author-name">By Ensemble Member</span>
+              </div>
+              <button type="button" class="read-article-btn" data-post-id="post-4">Read Article &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- Global Footer                                                     -->
+  <!-- ================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-top-row">
+      <a class="footer-brand" href="home.html" aria-label="Kala Laya Nepal home">
+        <div class="footer-logo-badge">
+          <img src="logo.jpg" alt="Kala Laya Nepal Logo" class="footer-logo-img">
+        </div>
+        <span>
+          <strong>KALALAYA</strong>
+          <small>Theatre Repertory • नेपाल</small>
+        </span>
+      </a>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Theatre Blog</a>
+        <a href="contact.html">Contact &amp; Box Office</a>
+      </nav>
+
+      <div class="footer-social-wrap">
+        <span class="social-label">Follow Us on Instagram:</span>
+        <a class="footer-instagram-link" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" aria-label="Follow Kalalaya on Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@kalalaya_</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p class="copyright-text">
+        &copy; 2026 Kala Laya Nepal. Dedicated exclusively to Theatre Arts, Dramaturgy, and Living Stage Performance. All rights reserved.
+      </p>
+      <div class="footer-policy-links">
+        <a href="contact.html">Editorial Submissions</a>
+        <span>•</span>
+        <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer">Instagram @kalalaya_</a>
+        <span>•</span>
+        <a href="#top">Back to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FULL ARTICLE READING MODAL -->
+  <div class="article-modal-overlay" id="articleModal" role="dialog" aria-modal="true" aria-labelledby="articleModalTitle">
+    <div class="article-modal-card">
+      <button class="modal-close-btn" id="articleModalCloseBtn" type="button" aria-label="Close Article">✕</button>
+      <div class="article-modal-hero" id="articleModalHero">
+        <img src="" alt="" id="articleHeroImg">
+      </div>
+      <div class="article-modal-body">
+        <div class="article-meta-row">
+          <span class="category-pill" id="articleCategory"></span>
+          <span class="read-time-pill" id="articleTime"></span>
+        </div>
+        <h2 id="articleModalTitle"></h2>
+        <div class="article-author-byline" id="articleAuthor"></div>
+        <div class="article-full-text" id="articleFullText"></div>
+        <div class="article-modal-actions">
+          <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" class="article-ig-cta">
+            Discuss this Essay on Kalalaya Instagram &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Reservation Modal -->
+  <div class="ticket-modal-overlay" id="ticketModal" role="dialog" aria-modal="true" aria-labelledby="ticketModalTitle">
+    <div class="ticket-modal-card">
+      <button class="modal-close-btn" id="ticketModalCloseBtn" type="button" aria-label="Close ticket booking dialog">✕</button>
+      <div class="ticket-header-strip">
+        <span class="stage-tag">🎭 KALALAYA BOX OFFICE</span>
+        <h2 id="ticketModalTitle">Book Theatre Tickets</h2>
+        <p>Reserve your seats for live stage performances at Kalalaya Stage Hall</p>
+      </div>
+
+      <form id="ticketBookingForm" novalidate>
+        <div class="field">
+          <label for="ticketPlaySelect">Select Play <span>*</span></label>
+          <div class="input-wrap select-wrap">
+            <select id="ticketPlaySelect" name="play" required>
+              <option value="Kharani (खास कथा)">Kharani (खास कथा) — Drama</option>
+              <option value="Refund (रिफन्ड)">Refund (रिफन्ड) — Satire Comedy</option>
+              <option value="The Broken Mirror">The Broken Mirror — Upcoming Premiere</option>
+            </select>
+            <span class="select-chevron" aria-hidden="true">▾</span>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label for="ticketDate">Show Date <span>*</span></label>
+            <div class="input-wrap">
+              <input type="date" id="ticketDate" name="date" required>
+            </div>
+            <small class="error-message" id="ticketDateError"></small>
+          </div>
+          <div class="field">
+            <label for="ticketTime">Showtime <span>*</span></label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketTime" name="time" required>
+                <option value="5:15 PM">Evening Show (5:15 PM)</option>
+                <option value="7:00 PM">Night Show (7:00 PM)</option>
+                <option value="1:00 PM Matinee">Saturday Matinee (1:00 PM)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label for="ticketSeats">Number of Seats <span>*</span></label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketSeats" name="seats" required>
+                <option value="1">1 Seat (Rs. 400)</option>
+                <option value="2" selected>2 Seats (Rs. 800)</option>
+                <option value="3">3 Seats (Rs. 1,200)</option>
+                <option value="4">4 Seats (Rs. 1,600)</option>
+                <option value="5">5 Seats (Rs. 2,000)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ticketTier">Seating Category</label>
+            <div class="input-wrap select-wrap">
+              <select id="ticketTier" name="tier">
+                <option value="Standard">Standard Tier (Rs. 400)</option>
+                <option value="Front Row Circle">Front Row Circle (Rs. 600)</option>
+                <option value="Student Pass">Student Concession (Rs. 250 with ID)</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">▾</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ticketName">Full Name <span>*</span></label>
+          <div class="input-wrap">
+            <input type="text" id="ticketName" name="name" placeholder="Your Name" required>
+          </div>
+          <small class="error-message" id="ticketNameError"></small>
+        </div>
+
+        <div class="field">
+          <label for="ticketPhone">Phone / Mobile <span>*</span></label>
+          <div class="input-wrap">
+            <input type="tel" id="ticketPhone" name="phone" placeholder="+977-98XXXXXXXX" required>
+          </div>
+          <small class="error-message" id="ticketPhoneError"></small>
+        </div>
+
+        <button type="submit" class="primary-button" id="confirmTicketBtn">Confirm Ticket Reservation &rarr;</button>
+        <div class="form-status" id="ticketStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Image Space Tester & Uploader Modal -->
+  <div class="image-uploader-overlay" id="imageUploaderModal" role="dialog" aria-modal="true" aria-labelledby="uploaderModalTitle">
+    <div class="image-uploader-card">
+      <button class="modal-close-btn" id="uploaderCloseBtn" type="button" aria-label="Close Uploader">✕</button>
+      <div class="uploader-header">
+        <span class="tool-tag">📷 THEATRE IMAGE SPACE HELPER</span>
+        <h3 id="uploaderModalTitle">Put / Replace Article Image</h3>
+        <p>You can insert your custom theatrical production photo or article header still into this space.</p>
+      </div>
+
+      <div class="uploader-body">
+        <div class="active-slot-badge" id="activeSlotBadge">Selected Space: Article Slot</div>
+        
+        <div class="drop-zone" id="imageDropZone">
+          <div class="drop-zone-icon">🖼️</div>
+          <p><strong>Click to browse</strong> or drag &amp; drop an image here</p>
+          <small>Accepts JPG, PNG, WEBP, GIF</small>
+          <input type="file" id="localImageInput" accept="image/*" class="file-input-hidden">
+        </div>
+
+        <div class="preset-images-title">Or choose from Kalalaya Production Photos:</div>
+        <div class="preset-photos-grid">
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_monologue.jpg">
+            <img src="images/theatre_monologue.jpg" alt="Monologue">
+            <span>Monologue</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/play_kharani.jpg">
+            <img src="images/play_kharani.jpg" alt="Play Kharani">
+            <span>Kharani</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/hero_theatre_stage.jpg">
+            <img src="images/hero_theatre_stage.jpg" alt="Hero Stage">
+            <span>Stage</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_workshop.jpg">
+            <img src="images/theatre_workshop.jpg" alt="Workshop">
+            <span>Rehearsal</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/play_refund.jpg">
+            <img src="images/play_refund.jpg" alt="Play Refund">
+            <span>Refund</span>
+          </button>
+          <button type="button" class="preset-choice-btn" data-src="images/theatre_festival.jpg">
+            <img src="images/theatre_festival.jpg" alt="Festival">
+            <span>Festival</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

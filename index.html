@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kala Laya Nepal — Member Access & Theatre Portal. Log in or create an account to access our living stage repertoire, productions, gallery, and essays.">
+  <title>Enter Kalalaya Theatre | Login &amp; Sign Up</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page-body">
+
+  <!-- ================================================================= -->
+  <!-- Top Announcement Bar                                              -->
+  <!-- ================================================================= -->
+  <aside class="announcement-bar" aria-label="Theatre Portal Notice">
+    <div class="announcement-content">
+      <span class="spotlight-dot" aria-hidden="true"></span>
+      <p><strong>KALALAYA THEATRE ACCESS:</strong> Please log in or create an account to view our stage plays, gallery, and repertory.</p>
+      <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" class="announcement-link">Follow @kalalaya_ on Instagram &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ================================================================= -->
+  <!-- Header Bar                                                        -->
+  <!-- ================================================================= -->
+  <header class="site-header auth-header">
+    <a class="brand" href="index.html" aria-label="Kalalaya Theatre Portal">
+      <img src="logo.png" alt="Kala Laya Nepal Logo" class="brand-logo-img">
+      <span class="brand-copy">
+        <strong>KALALAYA</strong>
+        <small>Theatre Repertory • नेपाल</small>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <!-- Direct Instagram Link -->
+      <a class="header-instagram-btn" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" title="Follow Kalalaya on Instagram @kalalaya_">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="social-icon-svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span class="btn-text">Instagram</span>
+      </a>
+
+      <!-- Quick Switch to Login or Register -->
+      <button class="header-login-btn" id="portalToggleBtn" type="button">Member Log In</button>
+    </div>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- Already Logged In Banner (Shows if session exists)                -->
+  <!-- ================================================================= -->
+  <div class="active-session-banner" id="activeSessionBanner" style="display: none;">
+    <div class="session-box">
+      <span class="session-avatar" id="sessionAvatar">KL</span>
+      <div class="session-info">
+        <strong>You are already logged in as <span id="sessionUserName">Member</span></strong>
+        <p>You can proceed directly into the Kalalaya Theatre website.</p>
+      </div>
+      <div class="session-actions">
+        <a href="home.html" class="session-enter-btn">Enter Website &rarr;</a>
+        <button type="button" class="session-logout-btn" id="sessionLogoutBtn">Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================================================================= -->
+    <!-- PORTAL LAYOUT: CULTURE PANEL + AUTH FORMS (SIGN UP & LOGIN)       -->
+    <!-- ================================================================= -->
+    <section class="registration-layout portal-layout" id="portalLayout">
+      
+      <!-- Left: Theatrical Culture Panel / Backdrop Side -->
+      <aside class="culture-panel" id="culturePanel" aria-label="Kalalaya Nepal introduction">
+        <div class="culture-bg-art mode-logo" id="cultureBgArt" aria-hidden="true"></div>
+        <div class="culture-overlay"></div>
+        
+        <!-- Controls on Culture Panel -->
+        <div class="culture-top-controls">
+          <span class="culture-badge-tag">कलालय नेपाल</span>
+          <div class="bg-mode-switcher" role="radiogroup" aria-label="Background display mode">
+            <button type="button" class="bg-switch-btn active" data-mode="logo" id="bgSwitchLogo" title="Display Kalalaya logo backdrop">Logo Backdrop</button>
+            <button type="button" class="bg-switch-btn" data-mode="cultural" id="bgSwitchCultural" title="Display cultural stage mask backdrop">Stage Mask</button>
+          </div>
+        </div>
+
+        <!-- Culture Intro Content -->
+        <div class="culture-content">
+          <div class="culture-logo-badge" title="Kala Laya Nepal Official Emblem">
+            <img src="logo.jpg" alt="Kala Laya Nepal Official Emblem" class="culture-logo-img">
+          </div>
+          <h2>KALALAYA</h2>
+          <p class="culture-tagline">Living Stage Performance • नेपाल</p>
+          <span class="short-rule"></span>
+          <p class="culture-description">नेपालको जीवन्त मञ्चीय नाटक, मौलिक नाटक लेखन र वास्तविक नाटकीय कथावाचनको विशेष स्थलमा तपाईंलाई स्वागत छ। हाम्रो सम्पूर्ण नाटक तथा कार्यक्रमहरूको संग्रह हेर्न कृपया लग इन गर्नुहोस् वा नयाँ खाता बनाउनुहोस्।</p>
+          
+          <div class="culture-social-strip">
+            <a href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" class="culture-ig-link">
+              <span>Follow @kalalaya_ on Instagram &rarr;</span>
+            </a>
+          </div>
+
+          <div class="lotus-decoration" aria-hidden="true">❀</div>
+        </div>
+      </aside>
+
+      <!-- Right: Forms Side (Tabbed Sign Up & Login) -->
+      <section class="form-side" id="authFormSide" aria-label="Authentication Form">
+        <div class="form-card portal-card">
+          
+          <div class="form-card-badge" aria-hidden="true">
+            <img src="logo.png" alt="" class="form-badge-logo">
+          </div>
+
+          <!-- Auth Mode Tabs -->
+          <div class="auth-tabs-wrap">
+            <button type="button" class="auth-tab-btn active" id="tabRegisterBtn">Create Account (Sign Up)</button>
+            <button type="button" class="auth-tab-btn" id="tabLoginBtn">Member Log In</button>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- FORM 1: SIGN UP / REGISTRATION                                -->
+          <!-- ============================================================= -->
+          <div class="auth-view" id="registerView">
+            <h1 class="auth-heading">Join Kalalaya Theatre</h1>
+            <p class="form-intro">Create your account to view our home page, current stage plays, photo gallery, theatre essays, and contact box office.</p>
+
+            <form id="registrationForm" novalidate>
+              <div class="field">
+                <label for="fullName">Full Name <span>*</span></label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="4"/><path d="M4 21v-2.1A5.9 5.9 0 0 1 9.9 13h4.2a5.9 5.9 0 0 1 5.9 5.9V21Z"/></svg>
+                  <input id="fullName" name="fullName" type="text" placeholder="e.g. Aayush Sharma" autocomplete="name" required minlength="2">
+                </div>
+                <small class="error-message" id="nameError"></small>
+              </div>
+
+              <div class="field">
+                <label for="email">Email Address <span>*</span></label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+                  <input id="email" name="email" type="email" placeholder="example@domain.com" autocomplete="email" required>
+                </div>
+                <small class="error-message" id="emailError"></small>
+              </div>
+
+              <div class="field">
+                <label for="theatreInterest">Primary Theatre Interest <span>*</span></label>
+                <div class="input-wrap select-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <select id="theatreInterest" name="interest" required>
+                    <option value="">Select your theatre interest</option>
+                    <option value="patron" selected>Theatre Patron / Audience</option>
+                    <option value="actor">Actor / Auditions &amp; Casting</option>
+                    <option value="playwright">Playwright / Script Submissions</option>
+                    <option value="technical">Stagecraft / Lighting &amp; Sound</option>
+                    <option value="student">Student / Workshop Participant</option>
+                  </select>
+                  <span class="select-chevron" aria-hidden="true">▾</span>
+                </div>
+                <small class="error-message" id="interestError"></small>
+              </div>
+
+              <div class="field">
+                <label for="password">Password <span>*</span></label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v4"/></svg>
+                  <input id="password" name="password" type="password" placeholder="Create a password (min 8 chars)" autocomplete="new-password" required minlength="8">
+                  <button class="visibility-toggle" type="button" data-target="password" aria-label="Toggle password visibility">◉</button>
+                </div>
+                <small class="hint">Use at least 8 characters.</small>
+                <small class="error-message" id="passwordError"></small>
+              </div>
+
+              <div class="field">
+                <label for="confirmPassword">Confirm Password <span>*</span></label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v4"/></svg>
+                  <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm your password" autocomplete="new-password" required>
+                  <button class="visibility-toggle" type="button" data-target="confirmPassword" aria-label="Toggle confirm password visibility">◉</button>
+                </div>
+                <small class="error-message" id="confirmError"></small>
+              </div>
+
+              <div class="terms-row">
+                <input id="terms" name="terms" type="checkbox" required checked>
+                <label for="terms">I agree to Kalalaya Theatre's <a href="#">Repertory Guidelines</a> and <a href="#">Privacy Policy</a>.</label>
+              </div>
+              <small class="error-message terms-error" id="termsError"></small>
+
+              <button class="primary-button" type="submit" id="submitRegisterBtn">
+                <span>Sign Up &amp; Enter Website</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+            </form>
+
+            <div class="login-divider"><span></span><p>Already have an account?</p><span></span></div>
+            <button class="secondary-button" type="button" id="switchToLoginBtn">Log In Instead</button>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- FORM 2: MEMBER LOGIN                                          -->
+          <!-- ============================================================= -->
+          <div class="auth-view" id="loginView" style="display: none;">
+            <h1 class="auth-heading">Member Log In</h1>
+            <p class="form-intro">Welcome back to Kalalaya Theatre. Sign in to view our home page, stage plays, gallery, and box office.</p>
+
+            <form id="loginForm" novalidate>
+              <div class="field">
+                <label for="loginEmail">Email Address <span>*</span></label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+                  <input id="loginEmail" name="email" type="email" placeholder="example@domain.com" autocomplete="email" required>
+                </div>
+                <small class="error-message" id="loginEmailError"></small>
+              </div>
+
+              <div class="field">
+                <label for="loginPassword">Password <span>*</span></label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v4"/></svg>
+                  <input id="loginPassword" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+                  <button class="visibility-toggle" type="button" data-target="loginPassword" aria-label="Toggle password visibility">◉</button>
+                </div>
+                <small class="error-message" id="loginPasswordError"></small>
+              </div>
+
+              <button class="primary-button" type="submit" id="submitLoginBtn">
+                <span>Log In &amp; Enter Website</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+              <div class="form-status" id="loginStatus" role="status" aria-live="polite"></div>
+            </form>
+
+            <div class="login-divider"><span></span><p>New to Kalalaya Theatre?</p><span></span></div>
+            <button class="secondary-button" type="button" id="switchToRegisterBtn">Create New Account</button>
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+
+    <!-- Mountain Art Section Divider -->
+    <section class="mountain-footer-art" aria-hidden="true">
+      <div class="mountain-ranges"></div>
+      <div class="temple-art">⌂</div>
+    </section>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- Global Footer                                                     -->
+  <!-- ================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-top-row">
+      <div class="footer-brand">
+        <div class="footer-logo-badge">
+          <img src="logo.jpg" alt="Kala Laya Nepal Logo" class="footer-logo-img">
+        </div>
+        <span>
+          <strong>KALALAYA</strong>
+          <small>Theatre Repertory • नेपाल</small>
+        </span>
+      </div>
+
+      <div class="footer-social-wrap">
+        <span class="social-label">Official Instagram:</span>
+        <a class="footer-instagram-link" href="https://www.instagram.com/kalalaya_?rpxt=cjI1ZmZ6bnA2a3Ny" target="_blank" rel="noopener noreferrer" aria-label="Follow Kalalaya on Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@kalalaya_</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p class="copyright-text">
+        &copy; 2026 Kalalaya. Dedicated exclusively to Theatre Arts, Original drama creation, and Living Stage Performance. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
